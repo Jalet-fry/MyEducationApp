@@ -1,0 +1,36 @@
+# Build artifacts
+build/
+app/build/
+.gradle/
+*.iml
+
+# IDE settings
+.idea/
+.kotlin/
+*.ipr
+*.iws
+
+# Android specific
+local.properties
+.externalNativeBuild/
+.cxx/
+captures/
+output.json
+.navigation/
+
+# Python / Scripts
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Optional: if you don't want to commit the source html/php lessons
+# kotlin_lessons/
+# java_lessons/
+# android_lessons/
