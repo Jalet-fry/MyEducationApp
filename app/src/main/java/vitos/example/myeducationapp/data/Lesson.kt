@@ -29,7 +29,9 @@ data class Parameter(
     val id: String,
     val title: String,
     val type: ParameterType,
-    val defaultValue: String
+    val defaultValue: String,
+    val minValue: Float? = null,
+    val maxValue: Float? = null
 )
 
 enum class ParameterType {

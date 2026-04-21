@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Slider
@@ -37,12 +38,12 @@ fun ParameterEditor(
                 )
             }
             ParameterType.INT -> {
-                Column {
+                Column(modifier = Modifier.widthIn(max = 400.dp)) { // Ограничиваем ширину
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Slider(
                             value = (value as? Number)?.toFloat() ?: 0f,
                             onValueChange = { onValueChange(it.toInt()) },
-                            valueRange = 0f..100f,
+                            valueRange = (parameter.minValue ?: 0f)..(parameter.maxValue ?: 100f),
                             modifier = Modifier.weight(1f)
                         )
                         Text(text = value.toString(), modifier = Modifier.padding(start = 8.dp))
@@ -61,12 +62,12 @@ fun ParameterEditor(
                 }
             }
             ParameterType.DOUBLE -> {
-                Column {
+                Column(modifier = Modifier.widthIn(max = 400.dp)) { // Ограничиваем ширину
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Slider(
                             value = (value as? Number)?.toFloat() ?: 0f,
                             onValueChange = { onValueChange(it.toDouble()) },
-                            valueRange = 0f..1000f,
+                            valueRange = (parameter.minValue ?: 0f)..(parameter.maxValue ?: 1000f),
                             modifier = Modifier.weight(1f)
                         )
                         Text(text = String.format(Locale.US, "%.2f", (value as? Number)?.toDouble() ?: 0.0), modifier = Modifier.padding(start = 8.dp))

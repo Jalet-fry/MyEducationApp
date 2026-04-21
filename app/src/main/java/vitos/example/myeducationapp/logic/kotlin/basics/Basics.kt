@@ -19,9 +19,9 @@ fun registerBasics() {
 
         override val parameters = listOf(
             Parameter("userName", "Имя (String)", ParameterType.STRING, "Tom"),
-            Parameter("userAge", "Возраст (Int)", ParameterType.INT, "25"),
-            Parameter("valA", "Число A", ParameterType.INT, "10"),
-            Parameter("valB", "Число B", ParameterType.INT, "5")
+            Parameter("userAge", "Возраст (Int)", ParameterType.INT, "25", 0f, 120f),
+            Parameter("valA", "Число A", ParameterType.INT, "10", 0f, 100f),
+            Parameter("valB", "Число B", ParameterType.INT, "5", 0f, 100f)
         )
 
         override val sections = listOf(
@@ -75,8 +75,8 @@ fun registerBasics() {
         override val isAutoExecute = true
 
         override val parameters = listOf(
-            Parameter("score", "Баллы (0-100)", ParameterType.INT, "75"),
-            Parameter("day", "День недели (1-7)", ParameterType.INT, "1")
+            Parameter("score", "Баллы (0-100)", ParameterType.INT, "75", 0f, 100f),
+            Parameter("day", "День недели (1-7)", ParameterType.INT, "1", 1f, 10f)
         )
 
         override val sections = listOf(
@@ -134,8 +134,8 @@ fun registerBasics() {
         override val isAutoExecute = true
 
         override val parameters = listOf(
-            Parameter("count", "Количество повторов", ParameterType.INT, "5"),
-            Parameter("step", "Шаг цикла", ParameterType.INT, "1"),
+            Parameter("count", "Количество повторов", ParameterType.INT, "5", 1f, 20f),
+            Parameter("step", "Шаг цикла", ParameterType.INT, "1", 1f, 5f),
             Parameter("names", "Массив имен", ParameterType.ARRAY_STRING, "Tom, Alice, Bob")
         )
 
