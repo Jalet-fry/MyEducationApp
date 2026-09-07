@@ -32,17 +32,22 @@ class LessonsRepository(private val context: Context) {
      * Загружает полный контент урока.
      */
     suspend fun getLessonById(courseId: String, lessonId: String): Lesson? = withContext(Dispatchers.IO) {
-        val backend = LessonRegistry.getBackend(lessonId)
-        if (backend != null && backend.courseId == courseId) {
-            Lesson(
-                id = backend.lessonId,
-                course = backend.courseId,
-                title = backend.title,
-                description = backend.description,
-                sections = backend.sections,
-                parameters = backend.parameters
-            )
-        } else {
+        try {
+            val backend = LessonRegistry.getBackend(lessonId)
+            if (backend != null && backend.courseId == courseId) {
+                Lesson(
+                    id = backend.lessonId,
+                    course = backend.courseId,
+                    title = backend.title,
+                    description = backend.description,
+                    sections = backend.sections,
+                    parameters = backend.parameters
+                )
+            } else {
+                null
+            }
+        } catch (e: Exception) {
+            android.util.Log.e("LessonsRepository", "Error loading lesson $lessonId", e)
             null
         }
     }

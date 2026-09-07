@@ -24,4 +24,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "MyEducationApp"
 include(":app")
+include(":server")
+include(":shared")
  

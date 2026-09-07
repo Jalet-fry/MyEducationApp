@@ -1,0 +1,632 @@
+{
+  "language": "Android (Jetpack Compose)",
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Глава 1. Введение в Jetpack Compose",
+      "lessons": [
+        {
+          "title": "Что такое Jetpack Compose",
+          "url": "https://metanit.com/kotlin/jetpack/1.1.php"
+        },
+        {
+          "title": "Установка Android Studio",
+          "url": "https://metanit.com/kotlin/jetpack/1.4.php"
+        },
+        {
+          "title": "Первый проект на Jetpack Compose",
+          "url": "https://metanit.com/kotlin/jetpack/1.2.php"
+        },
+        {
+          "title": "Создание визуального интерфейса",
+          "url": "https://metanit.com/kotlin/jetpack/1.3.php"
+        },
+        {
+          "title": "Создание компонентов Composable",
+          "url": "https://metanit.com/kotlin/jetpack/1.5.php"
+        },
+        {
+          "title": "Взаимодействие с кодом Kotlin",
+          "url": "https://metanit.com/kotlin/jetpack/5.1.php"
+        },
+        {
+          "title": "Gradle",
+          "url": "https://metanit.com/kotlin/jetpack/1.6.php"
+        },
+        {
+          "title": "Добавление зависимостей",
+          "url": "https://metanit.com/kotlin/jetpack/1.7.php"
+        },
+        {
+          "title": "Файл манифеста AndroidManifest.xml",
+          "url": "https://metanit.com/kotlin/jetpack/1.8.php"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Глава 2. Модификаторы и визуальный интерфейс",
+      "lessons": [
+        {
+          "title": "Что такое модификаторы",
+          "url": "https://metanit.com/kotlin/jetpack/3.1.php"
+        },
+        {
+          "title": "Установка цвета",
+          "url": "https://metanit.com/kotlin/jetpack/3.2.php"
+        },
+        {
+          "title": "Установка размеров",
+          "url": "https://metanit.com/kotlin/jetpack/3.3.php"
+        },
+        {
+          "title": "Установка отступов и смещения",
+          "url": "https://metanit.com/kotlin/jetpack/3.4.php"
+        },
+        {
+          "title": "Создание прокрутки",
+          "url": "https://metanit.com/kotlin/jetpack/3.5.php"
+        },
+        {
+          "title": "Создание границы. Модификатор border",
+          "url": "https://metanit.com/kotlin/jetpack/3.7.php"
+        },
+        {
+          "title": "Модификатор clip. Создание фрагмента компонента",
+          "url": "https://metanit.com/kotlin/jetpack/3.8.php"
+        },
+        {
+          "title": "Создание тени и модификатор shadow",
+          "url": "https://metanit.com/kotlin/jetpack/3.9.php"
+        },
+        {
+          "title": "Обработка нажатий",
+          "url": "https://metanit.com/kotlin/jetpack/3.6.php"
+        },
+        {
+          "title": "Переопределение и объединение модификаторов",
+          "url": "https://metanit.com/kotlin/jetpack/3.10.php"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Глава 3. Контейнеры компоновки",
+      "lessons": [
+        {
+          "title": "Box",
+          "url": "https://metanit.com/kotlin/jetpack/2.1.php"
+        },
+        {
+          "title": "Column",
+          "url": "https://metanit.com/kotlin/jetpack/2.2.php"
+        },
+        {
+          "title": "Row",
+          "url": "https://metanit.com/kotlin/jetpack/2.3.php"
+        },
+        {
+          "title": "Композиции контейнеров",
+          "url": "https://metanit.com/kotlin/jetpack/2.4.php"
+        },
+        {
+          "title": "Surface",
+          "url": "https://metanit.com/kotlin/jetpack/2.5.php"
+        },
+        {
+          "title": "Списки LazyColumn и LazyRow",
+          "url": "https://metanit.com/kotlin/jetpack/2.6.php"
+        },
+        {
+          "title": "Грид",
+          "url": "https://metanit.com/kotlin/jetpack/2.7.php"
+        },
+        {
+          "title": "LazyVerticalStaggeredGrid и LazyHorizontalStaggeredGrid",
+          "url": "https://metanit.com/kotlin/jetpack/2.12.php"
+        },
+        {
+          "title": "FlowRow и FlowColumn",
+          "url": "https://metanit.com/kotlin/jetpack/2.8.php"
+        },
+        {
+          "title": "IntrinsicSize",
+          "url": "https://metanit.com/kotlin/jetpack/2.9.php"
+        },
+        {
+          "title": "Программная прокрутка",
+          "url": "https://metanit.com/kotlin/jetpack/2.10.php"
+        },
+        {
+          "title": "Прикрепленные заголовки",
+          "url": "https://metanit.com/kotlin/jetpack/2.11.php"
+        },
+        {
+          "title": "Модификатор aspectRatio",
+          "url": "https://metanit.com/kotlin/jetpack/2.13.php"
+        },
+        {
+          "title": "Интерфейс Edge-to-edge, enableEdgeToEdge и WindowInsets",
+          "url": "https://metanit.com/kotlin/jetpack/2.14.php"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Глава 4. Состояние компонентов",
+      "lessons": [
+        {
+          "title": "Введение в состояние компонентов",
+          "url": "https://metanit.com/kotlin/jetpack/5.2.php"
+        },
+        {
+          "title": "Однонаправленный поток данных",
+          "url": "https://metanit.com/kotlin/jetpack/5.3.php"
+        },
+        {
+          "title": "CompositionLocal",
+          "url": "https://metanit.com/kotlin/jetpack/5.4.php"
+        },
+        {
+          "title": "Производное состояние",
+          "url": "https://metanit.com/kotlin/jetpack/5.5.php"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Глава 5. Визуальные компоненты",
+      "lessons": [
+        {
+          "title": "Text",
+          "url": "https://metanit.com/kotlin/jetpack/4.1.php"
+        },
+        {
+          "title": "Аннотированные строки",
+          "url": "https://metanit.com/kotlin/jetpack/4.19.php"
+        },
+        {
+          "title": "Кнопка Button",
+          "url": "https://metanit.com/kotlin/jetpack/4.2.php"
+        },
+        {
+          "title": "Ввод текста, TextField и OutlinedTextField",
+          "url": "https://metanit.com/kotlin/jetpack/4.3.php"
+        },
+        {
+          "title": "Модификатор Modifier.toggleable",
+          "url": "https://metanit.com/kotlin/jetpack/4.7.php"
+        },
+        {
+          "title": "Checkbox",
+          "url": "https://metanit.com/kotlin/jetpack/4.4.php"
+        },
+        {
+          "title": "Выбираемый компонент и модификатор selectable",
+          "url": "https://metanit.com/kotlin/jetpack/4.6.php"
+        },
+        {
+          "title": "RadioButton",
+          "url": "https://metanit.com/kotlin/jetpack/4.5.php"
+        },
+        {
+          "title": "Иконки и компоненты IconButton и IconToggleButton",
+          "url": "https://metanit.com/kotlin/jetpack/4.8.php"
+        },
+        {
+          "title": "FloatingActionButton и ExtendedFloatingActionButton",
+          "url": "https://metanit.com/kotlin/jetpack/4.9.php"
+        },
+        {
+          "title": "Панели приложения TopAppBar и BottomAppBar",
+          "url": "https://metanit.com/kotlin/jetpack/4.10.php"
+        },
+        {
+          "title": "Scaffold",
+          "url": "https://metanit.com/kotlin/jetpack/4.11.php"
+        },
+        {
+          "title": "Всплывающие сообщения и Snackbar",
+          "url": "https://metanit.com/kotlin/jetpack/4.12.php"
+        },
+        {
+          "title": "Выдвижная панель ModalNavigationDrawer",
+          "url": "https://metanit.com/kotlin/jetpack/4.13.php"
+        },
+        {
+          "title": "Slider",
+          "url": "https://metanit.com/kotlin/jetpack/4.14.php"
+        },
+        {
+          "title": "Переключатель Switch",
+          "url": "https://metanit.com/kotlin/jetpack/4.15.php"
+        },
+        {
+          "title": "Диалоговые окна AlertDialog",
+          "url": "https://metanit.com/kotlin/jetpack/4.16.php"
+        },
+        {
+          "title": "Меню DropdownMenu",
+          "url": "https://metanit.com/kotlin/jetpack/4.17.php"
+        },
+        {
+          "title": "Индикаторы прогресса",
+          "url": "https://metanit.com/kotlin/jetpack/4.18.php"
+        },
+        {
+          "title": "AndroidView",
+          "url": "https://metanit.com/kotlin/jetpack/4.20.php"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Глава 6. Ресурсы в Jetpack Compose",
+      "lessons": [
+        {
+          "title": "Ресурсы строк",
+          "url": "https://metanit.com/kotlin/jetpack/7.1.php"
+        },
+        {
+          "title": "Ресурсы dimension",
+          "url": "https://metanit.com/kotlin/jetpack/7.2.php"
+        },
+        {
+          "title": "Ресурсы Color",
+          "url": "https://metanit.com/kotlin/jetpack/7.3.php"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Глава 7. Работа с изображениями",
+      "lessons": [
+        {
+          "title": "Компонент Image",
+          "url": "https://metanit.com/kotlin/jetpack/6.1.php"
+        },
+        {
+          "title": "Ресурсы изображений и ImageBitmap",
+          "url": "https://metanit.com/kotlin/jetpack/6.2.php"
+        },
+        {
+          "title": "Векторная графика и ImageVector",
+          "url": "https://metanit.com/kotlin/jetpack/6.3.php"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Глава 8. Кастомные контейнеры компоновки",
+      "lessons": [
+        {
+          "title": "Создание модификаторов компоновки",
+          "url": "https://metanit.com/kotlin/jetpack/8.1.php"
+        },
+        {
+          "title": "Создание контейнеров компоновки",
+          "url": "https://metanit.com/kotlin/jetpack/8.2.php"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Глава 9. ConstraintLayout",
+      "lessons": [
+        {
+          "title": "Подключение ConstraintLayout",
+          "url": "https://metanit.com/kotlin/jetpack/9.1.php"
+        },
+        {
+          "title": "Установка ограничений в ConstraintLayout",
+          "url": "https://metanit.com/kotlin/jetpack/9.2.php"
+        },
+        {
+          "title": "Создание цепочек компонентов",
+          "url": "https://metanit.com/kotlin/jetpack/9.3.php"
+        },
+        {
+          "title": "Направляющие линии guildeline",
+          "url": "https://metanit.com/kotlin/jetpack/9.4.php"
+        },
+        {
+          "title": "Барьеры",
+          "url": "https://metanit.com/kotlin/jetpack/9.5.php"
+        },
+        {
+          "title": "Наборы ограничений ConstraintSet",
+          "url": "https://metanit.com/kotlin/jetpack/9.6.php"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Глава 10. Корутины и асинхронность",
+      "lessons": [
+        {
+          "title": "Введение в корутины",
+          "url": "https://metanit.com/kotlin/jetpack/10.1.php"
+        },
+        {
+          "title": "LaunchedEffect",
+          "url": "https://metanit.com/kotlin/jetpack/10.2.php"
+        },
+        {
+          "title": "Потоки Flow",
+          "url": "https://metanit.com/kotlin/jetpack/10.3.php"
+        },
+        {
+          "title": "StateFlow",
+          "url": "https://metanit.com/kotlin/jetpack/10.4.php"
+        },
+        {
+          "title": "SharedState",
+          "url": "https://metanit.com/kotlin/jetpack/10.5.php"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Глава 11. Пагинация",
+      "lessons": [
+        {
+          "title": "Введение в пагинацию",
+          "url": "https://metanit.com/kotlin/jetpack/12.1.php"
+        },
+        {
+          "title": "Пример пагинации. Навигационные кнопки",
+          "url": "https://metanit.com/kotlin/jetpack/12.2.php"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Глава 12. Анимация",
+      "lessons": [
+        {
+          "title": "Анимация Dp. animateDpAsState",
+          "url": "https://metanit.com/kotlin/jetpack/13.1.php"
+        },
+        {
+          "title": "Функция tween. Время и сглаживание анимации",
+          "url": "https://metanit.com/kotlin/jetpack/13.2.php"
+        },
+        {
+          "title": "Функция repeatable и повторение анимации",
+          "url": "https://metanit.com/kotlin/jetpack/13.3.php"
+        },
+        {
+          "title": "Функция spring и эффект отскока",
+          "url": "https://metanit.com/kotlin/jetpack/13.4.php"
+        },
+        {
+          "title": "Функция keyframes и анимация по ключевым кадрам",
+          "url": "https://metanit.com/kotlin/jetpack/13.5.php"
+        },
+        {
+          "title": "Анимация цвета. animateColorAsState",
+          "url": "https://metanit.com/kotlin/jetpack/13.6.php"
+        },
+        {
+          "title": "Анимация числовых значений и animateFloatAsState",
+          "url": "https://metanit.com/kotlin/jetpack/13.7.php"
+        },
+        {
+          "title": "Объединение анимаций",
+          "url": "https://metanit.com/kotlin/jetpack/13.8.php"
+        },
+        {
+          "title": "AnimatedVisibility. Управление видимостью компонента",
+          "url": "https://metanit.com/kotlin/jetpack/13.9.php"
+        },
+        {
+          "title": "Настройка анимации в AnimatedVisibility",
+          "url": "https://metanit.com/kotlin/jetpack/13.10.php"
+        },
+        {
+          "title": "Модификатор animateEnterExit()",
+          "url": "https://metanit.com/kotlin/jetpack/13.11.php"
+        },
+        {
+          "title": "Crossfade",
+          "url": "https://metanit.com/kotlin/jetpack/13.12.php"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Глава 13. Рисование. Canvas",
+      "lessons": [
+        {
+          "title": "Компонент Canvas и DrawScope",
+          "url": "https://metanit.com/kotlin/jetpack/14.1.php"
+        },
+        {
+          "title": "Отрисовка линий",
+          "url": "https://metanit.com/kotlin/jetpack/14.2.php"
+        },
+        {
+          "title": "Отрисовка прямоугольников",
+          "url": "https://metanit.com/kotlin/jetpack/14.3.php"
+        },
+        {
+          "title": "Отрисовка кругов и овалов",
+          "url": "https://metanit.com/kotlin/jetpack/14.4.php"
+        },
+        {
+          "title": "Отрисовка дуги",
+          "url": "https://metanit.com/kotlin/jetpack/14.5.php"
+        },
+        {
+          "title": "Рисование геометрических путей",
+          "url": "https://metanit.com/kotlin/jetpack/14.6.php"
+        },
+        {
+          "title": "Отрисовка точек",
+          "url": "https://metanit.com/kotlin/jetpack/14.7.php"
+        },
+        {
+          "title": "Вывод текста",
+          "url": "https://metanit.com/kotlin/jetpack/14.8.php"
+        },
+        {
+          "title": "Отрисовка изображений",
+          "url": "https://metanit.com/kotlin/jetpack/14.9.php"
+        },
+        {
+          "title": "Трансформации",
+          "url": "https://metanit.com/kotlin/jetpack/14.10.php"
+        },
+        {
+          "title": "Создание градиента",
+          "url": "https://metanit.com/kotlin/jetpack/14.11.php"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Глава 14. ViewModel",
+      "lessons": [
+        {
+          "title": "Хранение состояния во ViewModel и взаимодействие с интерфейсом",
+          "url": "https://metanit.com/kotlin/jetpack/15.1.php"
+        },
+        {
+          "title": "LiveData",
+          "url": "https://metanit.com/kotlin/jetpack/15.2.php"
+        },
+        {
+          "title": "Пример приложения с VieModel",
+          "url": "https://metanit.com/kotlin/jetpack/15.3.php"
+        },
+        {
+          "title": "AndroidViewModel",
+          "url": "https://metanit.com/kotlin/jetpack/15.4.php"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Глава 15. Работа с базой данных",
+      "lessons": [
+        {
+          "title": "SQLite и Room",
+          "url": "https://metanit.com/kotlin/jetpack/16.1.php"
+        },
+        {
+          "title": "Основные элементы Room",
+          "url": "https://metanit.com/kotlin/jetpack/16.2.php"
+        },
+        {
+          "title": "Пример работы с SQLite и Room",
+          "url": "https://metanit.com/kotlin/jetpack/16.3.php"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Глава 16. Навигация",
+      "lessons": [
+        {
+          "title": "Введение в навигацию",
+          "url": "https://metanit.com/kotlin/jetpack/17.1.php"
+        },
+        {
+          "title": "Пример навигации",
+          "url": "https://metanit.com/kotlin/jetpack/17.2.php"
+        },
+        {
+          "title": "Параметры навигации",
+          "url": "https://metanit.com/kotlin/jetpack/17.3.php"
+        },
+        {
+          "title": "Панель навигации",
+          "url": "https://metanit.com/kotlin/jetpack/17.4.php"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Глава 17. Обработка жестов",
+      "lessons": [
+        {
+          "title": "Жесты нажатия",
+          "url": "https://metanit.com/kotlin/jetpack/18.1.php"
+        },
+        {
+          "title": "Петаскивание",
+          "url": "https://metanit.com/kotlin/jetpack/18.2.php"
+        },
+        {
+          "title": "Перетаскивание с помощью PointerInputScope",
+          "url": "https://metanit.com/kotlin/jetpack/18.3.php"
+        },
+        {
+          "title": "Перетаскивание по опорным точкам",
+          "url": "https://metanit.com/kotlin/jetpack/18.4.php"
+        },
+        {
+          "title": "Прокрутка",
+          "url": "https://metanit.com/kotlin/jetpack/18.5.php"
+        },
+        {
+          "title": "Масштабирование, вращение и перемещение",
+          "url": "https://metanit.com/kotlin/jetpack/18.6.php"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Глава 18. Activity",
+      "lessons": [
+        {
+          "title": "Activity и жизненный цикл приложения",
+          "url": "https://metanit.com/kotlin/jetpack/19.1.php"
+        },
+        {
+          "title": "Управление жизненным циклом Activity в компонентах Compose",
+          "url": "https://metanit.com/kotlin/jetpack/19.2.php"
+        },
+        {
+          "title": "Введение в Intent. Запуск Activity",
+          "url": "https://metanit.com/kotlin/jetpack/19.3.php"
+        },
+        {
+          "title": "Передача данных между Activity",
+          "url": "https://metanit.com/kotlin/jetpack/19.4.php"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Глава 19. Дополнительные статьи",
+      "lessons": [
+        {
+          "title": "Кнопка прокрутки",
+          "url": "https://metanit.com/kotlin/jetpack/11.1.php"
+        },
+        {
+          "title": "Темы. Material Design",
+          "url": "https://metanit.com/kotlin/jetpack/11.2.php"
+        },
+        {
+          "title": "Биометрическая аутентификация",
+          "url": "https://metanit.com/kotlin/jetpack/11.3.php"
+        },
+        {
+          "title": "Настройки SharedPreferences",
+          "url": "https://metanit.com/kotlin/jetpack/11.4.php"
+        },
+        {
+          "title": "Сетевые запросы",
+          "url": "https://metanit.com/kotlin/jetpack/11.5.php"
+        },
+        {
+          "title": "Локализация приложений",
+          "url": "https://metanit.com/kotlin/jetpack/11.6.php"
+        }
+      ]
+    }
+  ],
+  "total_lessons": 128
+}

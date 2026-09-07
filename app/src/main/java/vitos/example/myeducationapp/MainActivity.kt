@@ -43,9 +43,9 @@ class MainActivity : ComponentActivity() {
 
                 val courses = remember {
                     listOf(
-                        Course("kotlin", "Kotlin", "Лучший язык для Android", Color(0xFF7F52FF)),
-                        Course("java", "Java", "Классика программирования", Color(0xFFED8B00)),
-                        Course("android", "Android", "Разработка приложений", Color(0xFF3DDC84))
+                        Course("kotlin", "Kotlin", "Лучший язык для Android", "#7F52FF"),
+                        Course("java", "Java", "Классика программирования", "#ED8B00"),
+                        Course("android", "Android", "Разработка приложений", "#3DDC84")
                     )
                 }
 

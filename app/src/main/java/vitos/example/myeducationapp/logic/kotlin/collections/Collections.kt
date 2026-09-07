@@ -6,45 +6,43 @@ import vitos.example.myeducationapp.data.ParameterType
 import vitos.example.myeducationapp.data.SectionType
 import vitos.example.myeducationapp.logic.*
 
+/**
+ * Урок 5: Коллекции и Последовательности.
+ */
 fun registerCollections() {
     val course = "kotlin"
 
     LessonRegistry.register(object : LessonBackend {
-        override var lessonId = "7.1"
+        override var lessonId = "5.1"
         override val courseId = course
-        override val title = "Работа с коллекциями"
-        override val description = "Списки, множества, мапы и операции трансформации данных"
+        override val title = "Коллекции и Sequences"
+        override val description = "List, Map, Set и разница между немедленными и ленивыми (Sequences) вычислениями."
         override val isAutoExecute = true
 
         override val parameters = listOf(
-            Parameter("rawItems", "Элементы (через запятую)", ParameterType.ARRAY_STRING, "Tom, Alice, Bob, Alex, Sam"),
-            Parameter("filterLen", "Мин. длина имени", ParameterType.INT, "3"),
-            Parameter("search", "Поиск подстроки", ParameterType.STRING, "A")
+            Parameter("itemsCount", "Количество элементов", ParameterType.INT, "5", 1f, 1000f)
         )
 
         override val sections = listOf(
-            LessonSection(SectionType.HEADER, "1. Списки (List) и Множества (Set)"),
+            LessonSection(SectionType.HEADER, "Iterable vs Sequence"),
+            LessonSection(SectionType.TEXT, """
+                • **Iterable** (List, Set): Каждая операция (`map`, `filter`) создает промежуточную коллекцию.
+                • **Sequence**: "Ленивые" вычисления. Операции выполняются только тогда, когда запрошен результат (терминальная операция, например `toList`).
+                
+                Sequences эффективнее на больших объемах данных.
+            """.trimIndent()),
             LessonSection(SectionType.CODE, """
-                val items = listOf({{rawItems}})
-                val unique = items.toSet()
-                println("Всего: ${'$'}{items.size}, Уникальных: ${'$'}{unique.size}")
-            """.trimIndent(), tag = "base"),
-
-            LessonSection(SectionType.HEADER, "2. Фильтрация и Поиск"),
-            LessonSection(SectionType.CODE, """
-                val items = listOf({{rawItems}})
-                val filtered = items.filter { it.length >= {{filterLen}} }
-                val searchResult = items.find { it.contains({{search}}, ignoreCase = true) }
-                println("Длина >= {{filterLen}}: ${'$'}filtered")
-            """.trimIndent(), tag = "filter"),
-
-            LessonSection(SectionType.HEADER, "3. Трансформация и Группировка"),
-            LessonSection(SectionType.CODE, """
-                val items = listOf({{rawItems}})
-                val upper = items.map { it.uppercase() }
-                val grouped = items.groupBy { it.first() }
-                println("Группировка по букве: ${'$'}grouped")
-            """.trimIndent(), tag = "transform")
+                val list = (1..{{itemsCount}}).toList()
+                
+                // Iterable (Eager)
+                val resList = list.filter { it % 2 == 0 }.map { it * 2 }
+                
+                // Sequence (Lazy)
+                val resSeq = list.asSequence()
+                    .filter { it % 2 == 0 }
+                    .map { it * 2 }
+                    .toList()
+            """.trimIndent(), tag = "collections_logic")
         )
 
         override suspend fun execute(
@@ -53,30 +51,25 @@ fun registerCollections() {
             tag: String?,
             onUpdate: (String) -> Unit
         ) = LessonRegistry.runSafe(onUpdate) { println, _ ->
-            val items = params["rawItems"] as? List<*> ?: emptyList<String>()
+            val count = params.getInt("itemsCount")
+            val list = (1..count).toList()
             
-            when (tag) {
-                "base" -> {
-                    val unique = items.toSet()
-                    println("Список: $items")
-                    println("Множество (Set): $unique")
-                    println("Размер: ${items.size} (всего) / ${unique.size} (уникальных)")
-                }
-                "filter" -> {
-                    val len = params.getInt("filterLen")
-                    val search = params.getString("search")
-                    val filtered = items.filter { (it as? String)?.length ?: 0 >= len }
-                    val found = items.find { (it as? String)?.contains(search, ignoreCase = true) == true }
-                    println("Отфильтровано (длина >= $len): $filtered")
-                    println("Результат поиска '$search': ${found ?: "не найдено"}")
-                }
-                "transform" -> {
-                    val upper = items.map { it.toString().uppercase() }
-                    val grouped = items.groupBy { it.toString().first() }
-                    println("Трансформация (map): $upper")
-                    println("Группировка (groupBy): $grouped")
-                }
-            }
+            println("--- Log: Iterable (Eager) ---")
+            var filterCalls = 0
+            val res = list.filter { filterCalls++; it % 2 == 0 }.map { it * 2 }
+            println("Элементов в итоге: ${res.size}")
+            println("Вызовов фильтра: $filterCalls (прошли по всем сразу)")
+            
+            println("\n--- Log: Sequence (Lazy) ---")
+            var seqCalls = 0
+            val seqRes = list.asSequence()
+                .filter { seqCalls++; it % 2 == 0 }
+                .map { it * 2 }
+                .take(2) // Возьмем только первые два
+                .toList()
+            
+            println("Взяли только первые 2 элемента: $seqRes")
+            println("Вызовов фильтра: $seqCalls (Sequence остановился, как только нашел нужные 2)")
         }
     })
 }

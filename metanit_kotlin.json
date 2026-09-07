@@ -1,0 +1,388 @@
+{
+  "language": "Kotlin",
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Глава 1. Введение в язык Kotlin",
+      "lessons": [
+        {
+          "title": "Что такое Kotlin. Первая программа",
+          "url": "https://metanit.com/kotlin/tutorial/1.1.php"
+        },
+        {
+          "title": "Первая программа в IntelliJ IDEA",
+          "url": "https://metanit.com/kotlin/tutorial/1.2.php"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Глава 2. Основы языка Kotlin",
+      "lessons": [
+        {
+          "title": "Структура программы",
+          "url": "https://metanit.com/kotlin/tutorial/2.9.php"
+        },
+        {
+          "title": "Переменные",
+          "url": "https://metanit.com/kotlin/tutorial/2.1.php"
+        },
+        {
+          "title": "Типы данных",
+          "url": "https://metanit.com/kotlin/tutorial/2.2.php"
+        },
+        {
+          "title": "Консольный ввод и вывод",
+          "url": "https://metanit.com/kotlin/tutorial/2.10.php"
+        },
+        {
+          "title": "Операции с числами",
+          "url": "https://metanit.com/kotlin/tutorial/2.4.php"
+        },
+        {
+          "title": "Условные выражения",
+          "url": "https://metanit.com/kotlin/tutorial/2.5.php"
+        },
+        {
+          "title": "Условная конструкция if...else",
+          "url": "https://metanit.com/kotlin/tutorial/2.6.php"
+        },
+        {
+          "title": "Конструкция when",
+          "url": "https://metanit.com/kotlin/tutorial/2.11.php"
+        },
+        {
+          "title": "Циклы",
+          "url": "https://metanit.com/kotlin/tutorial/2.7.php"
+        },
+        {
+          "title": "Диапазоны",
+          "url": "https://metanit.com/kotlin/tutorial/2.8.php"
+        },
+        {
+          "title": "Ведение в массивы",
+          "url": "https://metanit.com/kotlin/tutorial/2.3.php"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Глава 3. Функциональное программирование",
+      "lessons": [
+        {
+          "title": "Функции и их параметры",
+          "url": "https://metanit.com/kotlin/tutorial/3.1.php"
+        },
+        {
+          "title": "Переменное количество параметров. Vararg",
+          "url": "https://metanit.com/kotlin/tutorial/3.2.php"
+        },
+        {
+          "title": "Возвращение результата. Оператор return",
+          "url": "https://metanit.com/kotlin/tutorial/3.3.php"
+        },
+        {
+          "title": "Однострочные и локальные функции",
+          "url": "https://metanit.com/kotlin/tutorial/3.4.php"
+        },
+        {
+          "title": "Перегрузка функций",
+          "url": "https://metanit.com/kotlin/tutorial/3.5.php"
+        },
+        {
+          "title": "Тип функции",
+          "url": "https://metanit.com/kotlin/tutorial/3.9.php"
+        },
+        {
+          "title": "Функции высокого порядка",
+          "url": "https://metanit.com/kotlin/tutorial/3.7.php"
+        },
+        {
+          "title": "Анонимные функции",
+          "url": "https://metanit.com/kotlin/tutorial/3.8.php"
+        },
+        {
+          "title": "Лямбда-выражения",
+          "url": "https://metanit.com/kotlin/tutorial/3.6.php"
+        },
+        {
+          "title": "Замыкания",
+          "url": "https://metanit.com/kotlin/tutorial/3.10.php"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Глава 4. Объектно-ориентированное программирование",
+      "lessons": [
+        {
+          "title": "Классы и объекты",
+          "url": "https://metanit.com/kotlin/tutorial/4.1.php"
+        },
+        {
+          "title": "Конструкторы",
+          "url": "https://metanit.com/kotlin/tutorial/4.3.php"
+        },
+        {
+          "title": "Пакеты и импорт",
+          "url": "https://metanit.com/kotlin/tutorial/4.5.php"
+        },
+        {
+          "title": "Наследование",
+          "url": "https://metanit.com/kotlin/tutorial/4.9.php"
+        },
+        {
+          "title": "Модификаторы видимости",
+          "url": "https://metanit.com/kotlin/tutorial/4.6.php"
+        },
+        {
+          "title": "Геттеры и сеттеры",
+          "url": "https://metanit.com/kotlin/tutorial/4.2.php"
+        },
+        {
+          "title": "Переопределение методов и свойств",
+          "url": "https://metanit.com/kotlin/tutorial/4.10.php"
+        },
+        {
+          "title": "Абстрактные классы и методы",
+          "url": "https://metanit.com/kotlin/tutorial/4.11.php"
+        },
+        {
+          "title": "Интерфейсы",
+          "url": "https://metanit.com/kotlin/tutorial/4.8.php"
+        },
+        {
+          "title": "Вложенные и внутренние классы и интерфейсы",
+          "url": "https://metanit.com/kotlin/tutorial/4.7.php"
+        },
+        {
+          "title": "Data-классы",
+          "url": "https://metanit.com/kotlin/tutorial/4.12.php"
+        },
+        {
+          "title": "Перечисления enums",
+          "url": "https://metanit.com/kotlin/tutorial/4.13.php"
+        },
+        {
+          "title": "Делегирование",
+          "url": "https://metanit.com/kotlin/tutorial/4.4.php"
+        },
+        {
+          "title": "Анонимные классы и объекты",
+          "url": "https://metanit.com/kotlin/tutorial/4.14.php"
+        },
+        {
+          "title": "Companion-объекты",
+          "url": "https://metanit.com/kotlin/tutorial/4.15.php"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Глава 5. Обобщения",
+      "lessons": [
+        {
+          "title": "Обобщенные классы и функции",
+          "url": "https://metanit.com/kotlin/tutorial/6.1.php"
+        },
+        {
+          "title": "Ограничения обобщений",
+          "url": "https://metanit.com/kotlin/tutorial/6.2.php"
+        },
+        {
+          "title": "Вариантность, ковариантность и контравариантность",
+          "url": "https://metanit.com/kotlin/tutorial/6.3.php"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Глава 6. Дополнительные возможности ООП",
+      "lessons": [
+        {
+          "title": "Обработка исключений",
+          "url": "https://metanit.com/kotlin/tutorial/5.2.php"
+        },
+        {
+          "title": "Null и nullable-типы",
+          "url": "https://metanit.com/kotlin/tutorial/5.1.php"
+        },
+        {
+          "title": "Преобразование типов",
+          "url": "https://metanit.com/kotlin/tutorial/5.3.php"
+        },
+        {
+          "title": "Функции расширения",
+          "url": "https://metanit.com/kotlin/tutorial/5.5.php"
+        },
+        {
+          "title": "Функции расширения с получателем",
+          "url": "https://metanit.com/kotlin/tutorial/5.9.php"
+        },
+        {
+          "title": "Перегрузка операторов",
+          "url": "https://metanit.com/kotlin/tutorial/5.8.php"
+        },
+        {
+          "title": "Делегированные свойства",
+          "url": "https://metanit.com/kotlin/tutorial/5.6.php"
+        },
+        {
+          "title": "Scope-функции",
+          "url": "https://metanit.com/kotlin/tutorial/5.7.php"
+        },
+        {
+          "title": "Инфиксная нотация",
+          "url": "https://metanit.com/kotlin/tutorial/5.4.php"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Глава 7. Коллекции и последовательности",
+      "lessons": [
+        {
+          "title": "Изменяемые и неизменяемые коллекции",
+          "url": "https://metanit.com/kotlin/tutorial/7.1.php"
+        },
+        {
+          "title": "List",
+          "url": "https://metanit.com/kotlin/tutorial/7.2.php"
+        },
+        {
+          "title": "Set",
+          "url": "https://metanit.com/kotlin/tutorial/7.3.php"
+        },
+        {
+          "title": "Map",
+          "url": "https://metanit.com/kotlin/tutorial/7.4.php"
+        },
+        {
+          "title": "Последовательности",
+          "url": "https://metanit.com/kotlin/tutorial/7.5.php"
+        },
+        {
+          "title": "Массивы",
+          "url": "https://metanit.com/kotlin/tutorial/7.16.php"
+        },
+        {
+          "title": "Отличие последовательности от коллекций Iterable",
+          "url": "https://metanit.com/kotlin/tutorial/7.6.php"
+        },
+        {
+          "title": "Фильтрация",
+          "url": "https://metanit.com/kotlin/tutorial/7.7.php"
+        },
+        {
+          "title": "Проверка элементов",
+          "url": "https://metanit.com/kotlin/tutorial/7.8.php"
+        },
+        {
+          "title": "Трансформации",
+          "url": "https://metanit.com/kotlin/tutorial/7.9.php"
+        },
+        {
+          "title": "Группировка",
+          "url": "https://metanit.com/kotlin/tutorial/7.10.php"
+        },
+        {
+          "title": "Сортировка",
+          "url": "https://metanit.com/kotlin/tutorial/7.11.php"
+        },
+        {
+          "title": "Агрегатные операции",
+          "url": "https://metanit.com/kotlin/tutorial/7.12.php"
+        },
+        {
+          "title": "Сложение, вычитание и объединение коллекций",
+          "url": "https://metanit.com/kotlin/tutorial/7.13.php"
+        },
+        {
+          "title": "Получение части элементов",
+          "url": "https://metanit.com/kotlin/tutorial/7.14.php"
+        },
+        {
+          "title": "Получение отдельных элементов",
+          "url": "https://metanit.com/kotlin/tutorial/7.15.php"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Глава 8. Корутины",
+      "lessons": [
+        {
+          "title": "Введение в корутины",
+          "url": "https://metanit.com/kotlin/tutorial/8.1.php"
+        },
+        {
+          "title": "Область корутины",
+          "url": "https://metanit.com/kotlin/tutorial/8.2.php"
+        },
+        {
+          "title": "launch и Job",
+          "url": "https://metanit.com/kotlin/tutorial/8.3.php"
+        },
+        {
+          "title": "Async, await и Deferred",
+          "url": "https://metanit.com/kotlin/tutorial/8.4.php"
+        },
+        {
+          "title": "Диспетчер корутины",
+          "url": "https://metanit.com/kotlin/tutorial/8.7.php"
+        },
+        {
+          "title": "Отмена выполнения корутин",
+          "url": "https://metanit.com/kotlin/tutorial/8.5.php"
+        },
+        {
+          "title": "Каналы",
+          "url": "https://metanit.com/kotlin/tutorial/8.6.php"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Глава 9. Асинхронные потоки",
+      "lessons": [
+        {
+          "title": "Введение в асинхронные потоки",
+          "url": "https://metanit.com/kotlin/tutorial/9.1.php"
+        },
+        {
+          "title": "Создание асинхронного потока",
+          "url": "https://metanit.com/kotlin/tutorial/9.2.php"
+        },
+        {
+          "title": "Операции с потоками",
+          "url": "https://metanit.com/kotlin/tutorial/9.3.php"
+        },
+        {
+          "title": "Функции count, take и drop. Количество элементов в потоке",
+          "url": "https://metanit.com/kotlin/tutorial/9.4.php"
+        },
+        {
+          "title": "Функции first, last, single",
+          "url": "https://metanit.com/kotlin/tutorial/9.5.php"
+        },
+        {
+          "title": "Преобразование данных. Функции map и transform",
+          "url": "https://metanit.com/kotlin/tutorial/9.6.php"
+        },
+        {
+          "title": "Фильтрация данных",
+          "url": "https://metanit.com/kotlin/tutorial/9.7.php"
+        },
+        {
+          "title": "Сведение данных. Функции reduce и fold",
+          "url": "https://metanit.com/kotlin/tutorial/9.8.php"
+        },
+        {
+          "title": "Объединение потоков",
+          "url": "https://metanit.com/kotlin/tutorial/9.9.php"
+        }
+      ]
+    }
+  ],
+  "total_lessons": 82
+}

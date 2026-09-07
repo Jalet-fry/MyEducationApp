@@ -93,11 +93,13 @@ fun LessonDetailScreen(
                             paramValues[parameter.id] = newValue
                             // Авто-выполнение, если бэкенд это поддерживает
                             if (backend?.isAutoExecute == true) {
-                                sections.forEachIndexed { index, section ->
-                                    if (section.type == SectionType.CODE) {
+                                // Выполняем только первую CODE секцию для избежания конфликтов
+                                sections.indexOfFirst { it.type == SectionType.CODE }.let { firstIndex ->
+                                    if (firstIndex != -1) {
+                                        val section = sections[firstIndex]
                                         scope.launch {
-                                            backend.execute(paramValues, index, section.tag, onUpdate = { res ->
-                                                results[index] = res
+                                            backend.execute(paramValues, firstIndex, section.tag, onUpdate = { res ->
+                                                results[firstIndex] = res
                                             })
                                         }
                                     }

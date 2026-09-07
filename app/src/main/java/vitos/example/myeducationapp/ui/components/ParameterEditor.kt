@@ -48,14 +48,20 @@ fun ParameterEditor(
                         )
                         Text(text = value.toString(), modifier = Modifier.padding(start = 8.dp))
                     }
+                    val isError = value.toString().toIntOrNull() == null && value.toString().isNotEmpty()
                     OutlinedTextField(
                         value = value.toString(),
                         onValueChange = { 
-                            val num = it.toIntOrNull()
-                            if (num != null) onValueChange(num)
-                            else if (it.isEmpty()) onValueChange(0)
+                            if (it.isEmpty()) onValueChange(0)
+                            else it.toIntOrNull()?.let { num -> onValueChange(num) }
                         },
                         label = { Text("Точное значение") },
+                        isError = isError,
+                        supportingText = {
+                            if (isError) {
+                                Text("Введите целое число")
+                            }
+                        },
                         modifier = Modifier.fillMaxWidth(),
                         singleLine = true
                     )
@@ -72,14 +78,20 @@ fun ParameterEditor(
                         )
                         Text(text = String.format(Locale.US, "%.2f", (value as? Number)?.toDouble() ?: 0.0), modifier = Modifier.padding(start = 8.dp))
                     }
+                    val isError = value.toString().toDoubleOrNull() == null && value.toString().isNotEmpty()
                     OutlinedTextField(
                         value = value.toString(),
                         onValueChange = { 
-                            val num = it.toDoubleOrNull()
-                            if (num != null) onValueChange(num)
-                            else if (it.isEmpty()) onValueChange(0.0)
+                            if (it.isEmpty()) onValueChange(0.0)
+                            else it.toDoubleOrNull()?.let { num -> onValueChange(num) }
                         },
                         label = { Text("Точное значение") },
+                        isError = isError,
+                        supportingText = {
+                            if (isError) {
+                                Text("Введите число")
+                            }
+                        },
                         modifier = Modifier.fillMaxWidth(),
                         singleLine = true
                     )
@@ -108,7 +120,8 @@ fun ParameterEditor(
                 OutlinedTextField(
                     value = textValue,
                     onValueChange = { input ->
-                        val list = input.split(",").map { it.trim() }
+                        val list = if (input.isBlank()) emptyList()
+                        else input.split(",").map { it.trim() }.filter { it.isNotEmpty() }
                         onValueChange(list)
                     },
                     label = { Text("Строки через запятую") },

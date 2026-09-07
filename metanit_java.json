@@ -1,0 +1,724 @@
+{
+  "language": "Java",
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Глава 1. Введение в Java",
+      "lessons": [
+        {
+          "title": "Что такое Java",
+          "url": "https://metanit.com/java/tutorial/1.1.php"
+        },
+        {
+          "title": "Установка JDK",
+          "url": "https://metanit.com/java/tutorial/1.6.php"
+        },
+        {
+          "title": "Первая программа на Java",
+          "url": "https://metanit.com/java/tutorial/1.2.php"
+        },
+        {
+          "title": "Первая программа в IntelliJ IDEA",
+          "url": "https://metanit.com/java/tutorial/1.5.php"
+        },
+        {
+          "title": "Первая программа в NetBeans",
+          "url": "https://metanit.com/java/tutorial/1.3.php"
+        },
+        {
+          "title": "Первая программа в Eclipse",
+          "url": "https://metanit.com/java/tutorial/1.4.php"
+        },
+        {
+          "title": "JShell",
+          "url": "https://metanit.com/java/tutorial/1.7.php"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Глава 2. Основы программирования на Java",
+      "lessons": [
+        {
+          "title": "Структура программы",
+          "url": "https://metanit.com/java/tutorial/2.11.php"
+        },
+        {
+          "title": "Переменные и константы",
+          "url": "https://metanit.com/java/tutorial/2.1.php"
+        },
+        {
+          "title": "Литералы",
+          "url": "https://metanit.com/java/tutorial/2.19.php"
+        },
+        {
+          "title": "Типы данных",
+          "url": "https://metanit.com/java/tutorial/2.12.php"
+        },
+        {
+          "title": "Консольный ввод/вывод в Java",
+          "url": "https://metanit.com/java/tutorial/2.9.php"
+        },
+        {
+          "title": "Арифметические операции",
+          "url": "https://metanit.com/java/tutorial/2.3.php"
+        },
+        {
+          "title": "Поразрядные операции",
+          "url": "https://metanit.com/java/tutorial/2.13.php"
+        },
+        {
+          "title": "Условные выражения",
+          "url": "https://metanit.com/java/tutorial/2.14.php"
+        },
+        {
+          "title": "Операции присваивания и приоритет операций",
+          "url": "https://metanit.com/java/tutorial/2.15.php"
+        },
+        {
+          "title": "Преобразования базовых типов данных",
+          "url": "https://metanit.com/java/tutorial/2.2.php"
+        },
+        {
+          "title": "Условные конструкции",
+          "url": "https://metanit.com/java/tutorial/2.5.php"
+        },
+        {
+          "title": "Циклы",
+          "url": "https://metanit.com/java/tutorial/2.6.php"
+        },
+        {
+          "title": "Массивы",
+          "url": "https://metanit.com/java/tutorial/2.4.php"
+        },
+        {
+          "title": "Конструкция и выражение switch",
+          "url": "https://metanit.com/java/tutorial/2.20.php"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Глава 3. Классы",
+      "lessons": [
+        {
+          "title": "Классы и объекты",
+          "url": "https://metanit.com/java/tutorial/3.1.php"
+        },
+        {
+          "title": "Методы",
+          "url": "https://metanit.com/java/tutorial/2.7.php"
+        },
+        {
+          "title": "Параметры методов",
+          "url": "https://metanit.com/java/tutorial/2.16.php"
+        },
+        {
+          "title": "Объекты как параметры методов",
+          "url": "https://metanit.com/java/tutorial/3.14.php"
+        },
+        {
+          "title": "Оператор return. Результат метода",
+          "url": "https://metanit.com/java/tutorial/2.17.php"
+        },
+        {
+          "title": "Перегрузка методов",
+          "url": "https://metanit.com/java/tutorial/2.18.php"
+        },
+        {
+          "title": "Конструкторы и инициализаторы",
+          "url": "https://metanit.com/java/tutorial/3.21.php"
+        },
+        {
+          "title": "Статические компоненты класса и модификатор static",
+          "url": "https://metanit.com/java/tutorial/3.4.php"
+        },
+        {
+          "title": "Область действия и время жизни переменных",
+          "url": "https://metanit.com/java/tutorial/3.20.php"
+        },
+        {
+          "title": "Рекурсивные функции",
+          "url": "https://metanit.com/java/tutorial/2.8.php"
+        },
+        {
+          "title": "Пакеты",
+          "url": "https://metanit.com/java/tutorial/3.2.php"
+        },
+        {
+          "title": "Модификаторы доступа",
+          "url": "https://metanit.com/java/tutorial/3.3.php"
+        },
+        {
+          "title": "Компактные файлы кода и метод main",
+          "url": "https://metanit.com/java/tutorial/3.19.php"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Глава 4. Объектно-ориентированное программирование",
+      "lessons": [
+        {
+          "title": "Инкапсуляция",
+          "url": "https://metanit.com/java/tutorial/3.22.php"
+        },
+        {
+          "title": "Наследование",
+          "url": "https://metanit.com/java/tutorial/3.5.php"
+        },
+        {
+          "title": "Запрет наследования и переопределения методов",
+          "url": "https://metanit.com/java/tutorial/3.23.php"
+        },
+        {
+          "title": "Полиморфизм и динамическая диспетчеризация методов",
+          "url": "https://metanit.com/java/tutorial/3.24.php"
+        },
+        {
+          "title": "Класс Object и его методы",
+          "url": "https://metanit.com/java/tutorial/3.9.php"
+        },
+        {
+          "title": "Абстрактные классы",
+          "url": "https://metanit.com/java/tutorial/3.6.php"
+        },
+        {
+          "title": "Иерархия наследования и преобразование типов",
+          "url": "https://metanit.com/java/tutorial/3.10.php"
+        },
+        {
+          "title": "Интерфейсы",
+          "url": "https://metanit.com/java/tutorial/3.7.php"
+        },
+        {
+          "title": "Интерфейсы и полиморфизм",
+          "url": "https://metanit.com/java/tutorial/3.28.php"
+        },
+        {
+          "title": "Множественная реализация и наследование интерфейсов",
+          "url": "https://metanit.com/java/tutorial/3.29.php"
+        },
+        {
+          "title": "Интерфейсы в механизме обратного вызова",
+          "url": "https://metanit.com/java/tutorial/3.16.php"
+        },
+        {
+          "title": "Перечисления enum",
+          "url": "https://metanit.com/java/tutorial/3.8.php"
+        },
+        {
+          "title": "Обобщения (Generics)",
+          "url": "https://metanit.com/java/tutorial/3.11.php"
+        },
+        {
+          "title": "Ограничения обобщений",
+          "url": "https://metanit.com/java/tutorial/3.17.php"
+        },
+        {
+          "title": "Наследование и обобщения",
+          "url": "https://metanit.com/java/tutorial/3.15.php"
+        },
+        {
+          "title": "Type Erasure (Стирание типов)",
+          "url": "https://metanit.com/java/tutorial/3.31.php"
+        },
+        {
+          "title": "Подстановочные знаки wildcards в обобщениях",
+          "url": "https://metanit.com/java/tutorial/3.32.php"
+        },
+        {
+          "title": "Ссылочные типы и клонирование объектов",
+          "url": "https://metanit.com/java/tutorial/3.13.php"
+        },
+        {
+          "title": "Классы Records",
+          "url": "https://metanit.com/java/tutorial/3.18.php"
+        },
+        {
+          "title": "Функциональные интерфейсы и ссылки на методы",
+          "url": "https://metanit.com/java/tutorial/9.4.php"
+        },
+        {
+          "title": "Лямбда-выражения",
+          "url": "https://metanit.com/java/tutorial/9.1.php"
+        },
+        {
+          "title": "Лямбды как параметры и результаты методов",
+          "url": "https://metanit.com/java/tutorial/9.2.php"
+        },
+        {
+          "title": "Встроенные функциональные интерфейсы",
+          "url": "https://metanit.com/java/tutorial/9.3.php"
+        },
+        {
+          "title": "Внутренние и вложенные классы",
+          "url": "https://metanit.com/java/tutorial/3.12.php"
+        },
+        {
+          "title": "Анонимные классы",
+          "url": "https://metanit.com/java/tutorial/3.30.php"
+        },
+        {
+          "title": "Sealed-классы и интерфейсы",
+          "url": "https://metanit.com/java/tutorial/3.25.php"
+        },
+        {
+          "title": "Pattern мatching. Паттерн типов",
+          "url": "https://metanit.com/java/tutorial/3.26.php"
+        },
+        {
+          "title": "Pattern мatching. record-паттерн",
+          "url": "https://metanit.com/java/tutorial/3.27.php"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Глава 5. Обработка исключений",
+      "lessons": [
+        {
+          "title": "Обработка исключений и конструкция try...catch...finally",
+          "url": "https://metanit.com/java/tutorial/2.10.php"
+        },
+        {
+          "title": "Классы исключений",
+          "url": "https://metanit.com/java/tutorial/4.2.php"
+        },
+        {
+          "title": "Операторы throws и throw",
+          "url": "https://metanit.com/java/tutorial/4.1.php"
+        },
+        {
+          "title": "Создание своих классов исключений",
+          "url": "https://metanit.com/java/tutorial/4.3.php"
+        },
+        {
+          "title": "Assert",
+          "url": "https://metanit.com/java/tutorial/4.4.php"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Глава 6. Коллекции",
+      "lessons": [
+        {
+          "title": "Типы коллекций. Интерфейс Collection",
+          "url": "https://metanit.com/java/tutorial/5.1.php"
+        },
+        {
+          "title": "Класс ArrayList и интерфейс List",
+          "url": "https://metanit.com/java/tutorial/5.2.php"
+        },
+        {
+          "title": "Интерфейсы Comparable и Comporator. Сортировка",
+          "url": "https://metanit.com/java/tutorial/5.6.php"
+        },
+        {
+          "title": "Очереди и стеки. Классы ArrayDeque и PriorityQueue",
+          "url": "https://metanit.com/java/tutorial/5.7.php"
+        },
+        {
+          "title": "Связанный список LinkedList",
+          "url": "https://metanit.com/java/tutorial/5.3.php"
+        },
+        {
+          "title": "Интерфейс Set и хеш-таблицы HashSet",
+          "url": "https://metanit.com/java/tutorial/5.4.php"
+        },
+        {
+          "title": "Деревья TreeSet и интерфейсы SortedSet и NavigableSet",
+          "url": "https://metanit.com/java/tutorial/5.5.php"
+        },
+        {
+          "title": "Словари. Интерфейс Map и класс HashMap",
+          "url": "https://metanit.com/java/tutorial/5.8.php"
+        },
+        {
+          "title": "Интерфейсы SortedMap и NavigableMap. Класс TreeMap",
+          "url": "https://metanit.com/java/tutorial/5.9.php"
+        },
+        {
+          "title": "Итераторы. Iterator и Iterable",
+          "url": "https://metanit.com/java/tutorial/5.10.php"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Глава 7. Потоки ввода-вывода. Работа с файлами",
+      "lessons": [
+        {
+          "title": "Потоки ввода-вывода",
+          "url": "https://metanit.com/java/tutorial/6.1.php"
+        },
+        {
+          "title": "Чтение и запись файлов. FileInputStream и FileOutputStream",
+          "url": "https://metanit.com/java/tutorial/6.3.php"
+        },
+        {
+          "title": "Закрытие потоков и конструкция try-с-ресурсами",
+          "url": "https://metanit.com/java/tutorial/6.2.php"
+        },
+        {
+          "title": "Классы ByteArrayInputStream и ByteArrayOutputStream",
+          "url": "https://metanit.com/java/tutorial/6.4.php"
+        },
+        {
+          "title": "Буферизованные потоки BufferedInputStream и BufferedOutputStream",
+          "url": "https://metanit.com/java/tutorial/6.5.php"
+        },
+        {
+          "title": "Форматируемый вывод. PrintStream и PrintWriter",
+          "url": "https://metanit.com/java/tutorial/6.6.php"
+        },
+        {
+          "title": "Классы DataOutputStream и DataInputStream",
+          "url": "https://metanit.com/java/tutorial/6.7.php"
+        },
+        {
+          "title": "Чтение и запись текстовых файлов",
+          "url": "https://metanit.com/java/tutorial/6.8.php"
+        },
+        {
+          "title": "Буферизация символьных потоков. BufferedReader и BufferedWriter",
+          "url": "https://metanit.com/java/tutorial/6.9.php"
+        },
+        {
+          "title": "Сериализация объектов",
+          "url": "https://metanit.com/java/tutorial/6.10.php"
+        },
+        {
+          "title": "Класс File. Работа с файлами и каталогами",
+          "url": "https://metanit.com/java/tutorial/6.11.php"
+        },
+        {
+          "title": "Работа с ZIP-архивами",
+          "url": "https://metanit.com/java/tutorial/6.12.php"
+        },
+        {
+          "title": "Класс Console",
+          "url": "https://metanit.com/java/tutorial/6.13.php"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Глава 8. Работа со строками",
+      "lessons": [
+        {
+          "title": "Введение в строки. Класс String",
+          "url": "https://metanit.com/java/tutorial/7.1.php"
+        },
+        {
+          "title": "Основные операции со строками",
+          "url": "https://metanit.com/java/tutorial/7.2.php"
+        },
+        {
+          "title": "StringBuffer и StringBuilder",
+          "url": "https://metanit.com/java/tutorial/7.3.php"
+        },
+        {
+          "title": "Регулярные выражения",
+          "url": "https://metanit.com/java/tutorial/7.4.php"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Глава 9. Многопоточное программирование",
+      "lessons": [
+        {
+          "title": "Многопоточное программирование и класс Thread",
+          "url": "https://metanit.com/java/tutorial/8.1.php"
+        },
+        {
+          "title": "Создание и выполнение потоков",
+          "url": "https://metanit.com/java/tutorial/8.2.php"
+        },
+        {
+          "title": "Управление потоками",
+          "url": "https://metanit.com/java/tutorial/8.11.php"
+        },
+        {
+          "title": "Завершение и прерывание потока",
+          "url": "https://metanit.com/java/tutorial/8.4.php"
+        },
+        {
+          "title": "Виртуальные потоки",
+          "url": "https://metanit.com/java/tutorial/8.12.php"
+        },
+        {
+          "title": "Синхронизация потоков. Оператор synchronized",
+          "url": "https://metanit.com/java/tutorial/8.3.php"
+        },
+        {
+          "title": "Взаимодействие потоков. Методы wait и notify",
+          "url": "https://metanit.com/java/tutorial/8.5.php"
+        },
+        {
+          "title": "Семафоры",
+          "url": "https://metanit.com/java/tutorial/8.6.php"
+        },
+        {
+          "title": "Обмен между потоками. Класс Exchanger",
+          "url": "https://metanit.com/java/tutorial/8.7.php"
+        },
+        {
+          "title": "Класс Phaser",
+          "url": "https://metanit.com/java/tutorial/8.8.php"
+        },
+        {
+          "title": "Блокировки. ReentrantLock",
+          "url": "https://metanit.com/java/tutorial/8.9.php"
+        },
+        {
+          "title": "Условия в блокировках",
+          "url": "https://metanit.com/java/tutorial/8.10.php"
+        },
+        {
+          "title": "Переменные volatile",
+          "url": "https://metanit.com/java/tutorial/8.16.php"
+        },
+        {
+          "title": "Атомарность и Atomics. Потокобезопасность без блокировок",
+          "url": "https://metanit.com/java/tutorial/8.17.php"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Глава 10. Асинхронность",
+      "lessons": [
+        {
+          "title": "Асинхронные задачи FutureTask. Callable и Future",
+          "url": "https://metanit.com/java/tutorial/8.13.php"
+        },
+        {
+          "title": "Executor - исполнитель задач",
+          "url": "https://metanit.com/java/tutorial/8.14.php"
+        },
+        {
+          "title": "Координация выполнения асинхронных задач",
+          "url": "https://metanit.com/java/tutorial/8.15.php"
+        },
+        {
+          "title": "CompletableFuture и промисы. Обработка результата асинхронных задач",
+          "url": "https://metanit.com/java/tutorial/8.18.php"
+        },
+        {
+          "title": "CompletableFuture, обработка ошибок и завершения асинхронных задач",
+          "url": "https://metanit.com/java/tutorial/8.19.php"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Глава 11. Stream API",
+      "lessons": [
+        {
+          "title": "Введение в Stream API",
+          "url": "https://metanit.com/java/tutorial/10.1.php"
+        },
+        {
+          "title": "Создание потока данных",
+          "url": "https://metanit.com/java/tutorial/10.2.php"
+        },
+        {
+          "title": "Фильтрация, перебор элементов и отображение",
+          "url": "https://metanit.com/java/tutorial/10.3.php"
+        },
+        {
+          "title": "Сортировка",
+          "url": "https://metanit.com/java/tutorial/10.8.php"
+        },
+        {
+          "title": "Получение подпотока и объединение потоков",
+          "url": "https://metanit.com/java/tutorial/10.13.php"
+        },
+        {
+          "title": "Методы skip и limit",
+          "url": "https://metanit.com/java/tutorial/10.4.php"
+        },
+        {
+          "title": "Операции сведения",
+          "url": "https://metanit.com/java/tutorial/10.11.php"
+        },
+        {
+          "title": "Метод reduce",
+          "url": "https://metanit.com/java/tutorial/10.5.php"
+        },
+        {
+          "title": "Тип Optional",
+          "url": "https://metanit.com/java/tutorial/10.12.php"
+        },
+        {
+          "title": "Метод collect",
+          "url": "https://metanit.com/java/tutorial/10.6.php"
+        },
+        {
+          "title": "Группировка",
+          "url": "https://metanit.com/java/tutorial/10.7.php"
+        },
+        {
+          "title": "Параллельные потоки",
+          "url": "https://metanit.com/java/tutorial/10.9.php"
+        },
+        {
+          "title": "Параллельные операции над массивами",
+          "url": "https://metanit.com/java/tutorial/10.10.php"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Глава 12. Модульность",
+      "lessons": [
+        {
+          "title": "Создание модуля",
+          "url": "https://metanit.com/java/tutorial/11.1.php"
+        },
+        {
+          "title": "Зависимые модули",
+          "url": "https://metanit.com/java/tutorial/11.2.php"
+        },
+        {
+          "title": "Взаимодействие между модулями. Экспорт и импорт",
+          "url": "https://metanit.com/java/tutorial/11.3.php"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Глава 13. Дополнительные классы",
+      "lessons": [
+        {
+          "title": "Математические вычисления и класс Math",
+          "url": "https://metanit.com/java/tutorial/12.1.php"
+        },
+        {
+          "title": "Большие числа BigInteger и BigDecimal",
+          "url": "https://metanit.com/java/tutorial/12.2.php"
+        },
+        {
+          "title": "Работа с датами. LocalDate",
+          "url": "https://metanit.com/java/tutorial/12.3.php"
+        },
+        {
+          "title": "Процессы. Process и ProcessBuilder",
+          "url": "https://metanit.com/java/tutorial/12.4.php"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Глава 14. JAR-файлы и подключение библиотек и классов",
+      "lessons": [
+        {
+          "title": "Файлы JAR, их создание и выполнение",
+          "url": "https://metanit.com/java/tutorial/13.1.php"
+        },
+        {
+          "title": "Создание и подключение библиотеки JAR",
+          "url": "https://metanit.com/java/tutorial/13.2.php"
+        },
+        {
+          "title": "Модульный jar-файл",
+          "url": "https://metanit.com/java/tutorial/13.4.php"
+        },
+        {
+          "title": "Установка пути к классам Java",
+          "url": "https://metanit.com/java/tutorial/13.3.php"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Глава 15. Рефлексия",
+      "lessons": [
+        {
+          "title": "Введение в рефлексию. Класс Class",
+          "url": "https://metanit.com/java/tutorial/14.1.php"
+        },
+        {
+          "title": "Исследование типов",
+          "url": "https://metanit.com/java/tutorial/14.2.php"
+        },
+        {
+          "title": "Поля класса и класс Field",
+          "url": "https://metanit.com/java/tutorial/14.3.php"
+        },
+        {
+          "title": "Модификаторы доступа и класс Modifier",
+          "url": "https://metanit.com/java/tutorial/14.4.php"
+        },
+        {
+          "title": "Класс Constructor и cоздание объектов",
+          "url": "https://metanit.com/java/tutorial/14.5.php"
+        },
+        {
+          "title": "Методы и класс Method",
+          "url": "https://metanit.com/java/tutorial/14.6.php"
+        },
+        {
+          "title": "Proxy (Прокси)",
+          "url": "https://metanit.com/java/tutorial/14.7.php"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Глава 16. Аннотации",
+      "lessons": [
+        {
+          "title": "Введение в аннотации. Встроенные аннотации",
+          "url": "https://metanit.com/java/tutorial/15.1.php"
+        },
+        {
+          "title": "Создание и применение аннотаций",
+          "url": "https://metanit.com/java/tutorial/15.2.php"
+        },
+        {
+          "title": "Обработка аннотаций во время выполнения",
+          "url": "https://metanit.com/java/tutorial/15.3.php"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Глава 17. Взаимодействие с нативным кодом",
+      "lessons": [
+        {
+          "title": "Java Native Interface (JNI)",
+          "url": "https://metanit.com/java/tutorial/16.1.php"
+        },
+        {
+          "title": "Foreign Functions и Memory API",
+          "url": "https://metanit.com/java/tutorial/16.2.php"
+        },
+        {
+          "title": "Арена и сегменты памяти MemorySegment",
+          "url": "https://metanit.com/java/tutorial/16.3.php"
+        },
+        {
+          "title": "Компоновка памяти MemoryLayout и работа MemorySegment",
+          "url": "https://metanit.com/java/tutorial/16.4.php"
+        },
+        {
+          "title": "Сложные данные и MemoryLayout",
+          "url": "https://metanit.com/java/tutorial/16.5.php"
+        },
+        {
+          "title": "Поиск и вызов внешних функций",
+          "url": "https://metanit.com/java/tutorial/16.6.php"
+        },
+        {
+          "title": "Нативные функции обратного вызова",
+          "url": "https://metanit.com/java/tutorial/16.7.php"
+        }
+      ]
+    }
+  ],
+  "total_lessons": 154
+}

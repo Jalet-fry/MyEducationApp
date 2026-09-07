@@ -6,49 +6,45 @@ import vitos.example.myeducationapp.data.ParameterType
 import vitos.example.myeducationapp.data.SectionType
 import vitos.example.myeducationapp.logic.*
 
+/**
+ * Урок 8: Дженерики. Вариантность и Reified.
+ */
 fun registerGenerics() {
     val course = "kotlin"
 
     LessonRegistry.register(object : LessonBackend {
-        override var lessonId = "8.1" // Соответствует главе 8 в новом плане
+        override var lessonId = "8.1"
         override val courseId = course
-        override val title = "Обобщения (Generics) Deep Dive"
-        override val description = "Универсальные типы, ограничения и вариантивность (in/out)"
+        override val title = "Generics и Вариантность"
+        override val description = "Параметризация типов, ключевые слова 'in' и 'out'."
         override val isAutoExecute = true
 
-        override val parameters = listOf(
-            Parameter("numericVal", "Число для Box", ParameterType.INT, "42"),
-            Parameter("stringVal", "Строка для Box", ParameterType.STRING, "Kotlin")
-        )
-
         override val sections = listOf(
-            LessonSection(SectionType.HEADER, "1. Обобщенные классы"),
-            LessonSection(SectionType.TEXT, "Generics позволяют типам быть параметрами. Это обеспечивает типобезопасность без дублирования кода."),
+            LessonSection(SectionType.HEADER, "Generic классы"),
+            LessonSection(SectionType.TEXT, """
+                Дженерики позволяют создавать классы и функции, которые работают с разными типами данных, сохраняя типобезопасность.
+            """.trimIndent()),
             LessonSection(SectionType.CODE, """
-                class Box<T>(val value: T)
-                val intBox = Box({{numericVal}})
-                val strBox = Box("{{stringVal}}")
-                println("IntBox: ${'$'}{intBox.value}, StrBox: ${'$'}{strBox.value}")
-            """.trimIndent(), tag = "basic"),
-
-            LessonSection(SectionType.HEADER, "2. Ограничения типов (Constraints)"),
-            LessonSection(SectionType.TEXT, "Вы можете ограничить тип T, чтобы он наследовался от определенного класса или интерфейса (например, Number)."),
-            LessonSection(SectionType.CODE, """
-                fun <T : Number> sum(a: T, b: T): Double {
-                    return a.toDouble() + b.toDouble()
-                }
-                println("Сумма: " + sum({{numericVal}}, 10.5))
-            """.trimIndent(), tag = "constraints"),
-
-            LessonSection(SectionType.HEADER, "3. Вариантность (out / in)"),
-            LessonSection(SectionType.TEXT, "out T (ковариантность) позволяет только возвращать T. in T (контравариантность) позволяет только принимать T."),
-            LessonSection(SectionType.CODE, """
-                interface Producer<out T> { fun produce(): T }
-                interface Consumer<in T> { fun consume(item: T) }
+                class Box<T>(val item: T)
                 
-                println("out T: позволяет использовать подклассы там, где ожидается суперкласс.")
-                println("in T: наоборот, позволяет использовать суперклассы там, где ожидается подкласс.")
-            """.trimIndent(), tag = "variance")
+                val intBox = Box(10)
+                val strBox = Box("Hello")
+            """.trimIndent(), tag = "generics_basic"),
+
+            LessonSection(SectionType.HEADER, "Вариантность (out / in)"),
+            LessonSection(SectionType.TEXT, """
+                • `out T` (Ковариантность) — позволяет использовать подтип вместо базового типа (только для чтения).
+                • `in T` (Контравариантность) — позволяет использовать базовый тип вместо подтипа (только для записи).
+            """.trimIndent()),
+            LessonSection(SectionType.CODE, """
+                interface Producer<out T> {
+                    fun produce(): T
+                }
+                
+                interface Consumer<in T> {
+                    fun consume(item: T)
+                }
+            """.trimIndent(), tag = "variance_logic")
         )
 
         override suspend fun execute(
@@ -57,26 +53,14 @@ fun registerGenerics() {
             tag: String?,
             onUpdate: (String) -> Unit
         ) = LessonRegistry.runSafe(onUpdate) { println, _ ->
-            val n = params.getInt("numericVal")
-            val s = params.getString("stringVal")
-
-            when (tag) {
-                "basic" -> {
-                    println("Создано два объекта Box:")
-                    println("Box<Int> со значением $n")
-                    println("Box<String> со значением $s")
-                }
-                "constraints" -> {
-                    val result = n + 10.5
-                    println("T ограничен типом Number.")
-                    println("Результат sum($n, 10.5) = $result")
-                }
-                "variance" -> {
-                    println("Пример out: List<out T> в Kotlin.")
-                    println("Пример in: Comparable<in T>.")
-                    println("Это позволяет безопасно работать с иерархией типов в коллекциях.")
-                }
-            }
+            println("--- Log: Generics ---")
+            class Box<T>(val item: T)
+            val b = Box("Test")
+            println("Box содержит: ${b.item}")
+            
+            println("\n--- Log: Variance ---")
+            println("out T (Producer) гарантирует, что мы только отдаем T.")
+            println("in T (Consumer) гарантирует, что мы только принимаем T.")
         }
     })
 }

@@ -1,72 +1,72 @@
 package vitos.example.myeducationapp.logic.kotlin.coroutines
 
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import vitos.example.myeducationapp.data.LessonSection
 import vitos.example.myeducationapp.data.Parameter
 import vitos.example.myeducationapp.data.ParameterType
 import vitos.example.myeducationapp.data.SectionType
 import vitos.example.myeducationapp.logic.*
 
+/**
+ * Урок 6: Корутины. Асинхронность и Диспетчеры.
+ */
 object Coroutines {
     fun register() {
         val course = "kotlin"
 
         LessonRegistry.register(object : LessonBackend {
-            override var lessonId = "8.1"
+            override var lessonId = "6.1"
             override val courseId = course
-            override val title = "Основы корутин и задержки"
-            override val description = "Почувствуйте асинхронность: запуск задач с паузами"
-            
-            // Здесь авто-выполнение лучше выключить, чтобы юзер осознанно жал "Старт"
-            override val isAutoExecute = false 
+            override val title = "Основы Корутин"
+            override val description = "Launch, Async, Suspend функции и Диспетчеры."
+            override val isAutoExecute = false // Корутины лучше запускать по кнопке
 
             override val parameters = listOf(
-                Parameter("timeA", "Задержка задачи А (мс)", ParameterType.INT, "1000"),
-                Parameter("timeB", "Задержка задачи Б (мс)", ParameterType.INT, "500")
+                Parameter("delayMs", "Задержка (мс)", ParameterType.INT, "500", 100f, 3000f)
             )
 
             override val sections = listOf(
-                LessonSection(SectionType.HEADER, "Параллельное выполнение"),
-                LessonSection(SectionType.TEXT, "Корутины позволяют выполнять задачи параллельно. В этом примере задача Б завершится быстрее, чем А, если её задержка меньше."),
+                LessonSection(SectionType.HEADER, "Что такое Coroutines?"),
+                LessonSection(SectionType.TEXT, """
+                    Корутины — это "легковесные потоки". Они позволяют писать асинхронный код так же просто, как синхронный.
+                    Ключевые понятия:
+                    • `suspend` — функция, которая может приостановить выполнение, не блокируя поток.
+                    • `Dispatcher.Main` — для UI.
+                    • `Dispatcher.IO` — для сети и диска.
+                    • `Dispatcher.Default` — для вычислений.
+                """.trimIndent()),
                 LessonSection(SectionType.CODE, """
-                    // Имитация двух задач
-                    launch {
-                        delay({{timeA}})
-                        println("Задача А выполнена через {{timeA}}мс")
+                    suspend fun fetchData() {
+                        delay({{delayMs}}) // Приостановка
+                        println("Данные получены!")
                     }
-                    launch {
-                        delay({{timeB}})
-                        println("Задача Б выполнена через {{timeB}}мс")
+                    
+                    scope.launch(Dispatchers.IO) {
+                        fetchData()
                     }
-                    println("Задачи запущены...")
-                """.trimIndent(), tag = "race")
+                """.trimIndent(), tag = "coroutines_logic")
             )
 
             override suspend fun execute(
-                params: Map<String, Any>, 
-                sectionIndex: Int, 
-                tag: String?, 
+                params: Map<String, Any>,
+                sectionIndex: Int,
+                tag: String?,
                 onUpdate: (String) -> Unit
             ) = LessonRegistry.runSafe(onUpdate) { println, _ ->
-                val a = params.getInt("timeA").toLong()
-                val b = params.getInt("timeB").toLong()
-
-                println("--- СТАРТ ---")
+                val delayTime = params.getInt("delayMs").toLong()
                 
-                // Используем coroutineScope для параллельности внутри runSafe
-                kotlinx.coroutines.coroutineScope {
-                    launch {
-                        delay(a)
-                        println("✅ Задача А завершена ($a мс)")
-                    }
-                    launch {
-                        delay(b)
-                        println("🚀 Задача Б завершена ($b мс)")
-                    }
+                println("--- Запуск корутины ---")
+                println("Текущий поток: ${Thread.currentThread().name}")
+                
+                // Используем withContext для демонстрации смены потока
+                val result = withContext(Dispatchers.Default) {
+                    println("[Default] Выполняем работу в потоке: ${Thread.currentThread().name}")
+                    delay(delayTime)
+                    "Данные загружены за ${delayTime}мс"
                 }
                 
-                println("--- ВСЁ ГОТОВО ---")
+                println("[Main/Result] Результат: $result")
+                println("Текущий поток вернулся к: ${Thread.currentThread().name}")
             }
         })
     }

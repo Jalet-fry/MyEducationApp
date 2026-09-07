@@ -1,37 +1,49 @@
 package vitos.example.myeducationapp.logic.kotlin.flows
 
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.asFlow
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.*
 import vitos.example.myeducationapp.data.LessonSection
 import vitos.example.myeducationapp.data.Parameter
 import vitos.example.myeducationapp.data.ParameterType
 import vitos.example.myeducationapp.data.SectionType
 import vitos.example.myeducationapp.logic.*
 
+/**
+ * Урок 7: Flows. Потоки данных.
+ */
 object Flows {
     fun register() {
         val course = "kotlin"
 
         LessonRegistry.register(object : LessonBackend {
-            override var lessonId = "9.1"
+            override var lessonId = "7.1"
             override val courseId = course
-            override val title = "Основы Kotlin Flow"
-            override val description = "Холодные потоки данных, обработка последовательностей."
+            override val title = "Kotlin Flow"
+            override val description = "Холодные потоки данных, операторы преобразования и сбор данных."
             override val isAutoExecute = false
 
             override val parameters = listOf(
-                Parameter("count", "Кол-во чисел", ParameterType.INT, "5"),
-                Parameter("delay", "Задержка (мс)", ParameterType.INT, "300")
+                Parameter("limit", "Количество чисел", ParameterType.INT, "3", 1f, 10f)
             )
 
             override val sections = listOf(
-                LessonSection(SectionType.TEXT, "Flow — это поток данных, который может выдавать значения асинхронно."),
+                LessonSection(SectionType.HEADER, "Flow — Холодные потоки"),
+                LessonSection(SectionType.TEXT, """
+                    `Flow` похож на последовательности (`Sequence`), но для асинхронных данных.
+                    Он не начинает работу, пока кто-то не вызовет `collect`.
+                """.trimIndent()),
                 LessonSection(SectionType.CODE, """
-                    (1..{{count}}).asFlow()
-                        .onEach { delay({{delay}}) }
-                        .collect { println(it) }
-                """.trimIndent(), tag = "ticker")
+                    fun simpleFlow() = flow {
+                        for (i in 1..{{limit}}) {
+                            delay(500)
+                            emit(i)
+                        }
+                    }
+                    
+                    simpleFlow().collect { value ->
+                        println(value)
+                    }
+                """.trimIndent(), tag = "flow_logic")
             )
 
             override suspend fun execute(
@@ -40,16 +52,26 @@ object Flows {
                 tag: String?,
                 onUpdate: (String) -> Unit
             ) = LessonRegistry.runSafe(onUpdate) { println, _ ->
-                val count = params.getInt("count")
-                val d = params.getInt("delay").toLong()
-
-                println("--- ЗАПУСК FLOW ---")
-                (1..count).asFlow()
-                    .onEach { delay(d) }
-                    .collect { 
-                        println("Получено значение: $it")
+                val limit = params.getInt("limit")
+                
+                println("--- Запуск Flow ---")
+                
+                val myFlow = flow {
+                    for (i in 1..limit) {
+                        delay(300)
+                        println("Emit: $i")
+                        emit(i)
                     }
-                println("--- ПОТОК ЗАВЕРШЕН ---")
+                }
+                
+                println("Сбор данных (collect):")
+                myFlow
+                    .map { it * 10 }
+                    .collect { value ->
+                        println("Получено значение: $value")
+                    }
+                
+                println("Готово!")
             }
         })
     }

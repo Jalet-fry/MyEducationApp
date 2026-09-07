@@ -98,6 +98,11 @@ object LessonRegistry {
             output.append("\n[Ошибка: ${e.localizedMessage}]\n")
             onUpdate(output.toString().trim())
         }
-        return output.toString().trim()
+        
+        val result = output.toString().trim()
+        if (result.isEmpty()) {
+            return "Код выполнен успешно (без вывода в консоль)."
+        }
+        return result
     }
 }

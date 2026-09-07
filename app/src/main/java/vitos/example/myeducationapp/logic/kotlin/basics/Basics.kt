@@ -6,41 +6,71 @@ import vitos.example.myeducationapp.data.ParameterType
 import vitos.example.myeducationapp.data.SectionType
 import vitos.example.myeducationapp.logic.*
 
+/**
+ * Урок 1: Основы Kotlin. Переменные, Типы и Null Safety.
+ */
 fun registerBasics() {
     val course = "kotlin"
 
-    // --- ГЛАВА 1-2: ВВЕДЕНИЕ И ПЕРЕМЕННЫЕ ---
+    // --- 1.1 ПЕРЕМЕННЫЕ И ТИПЫ ДАННЫХ ---
     LessonRegistry.register(object : LessonBackend {
-        override var lessonId = "2.1"
+        override var lessonId = "1.1"
         override val courseId = course
-        override val title = "1. Переменные и типы данных"
-        override val description = "Объявление переменных (val/var), базовые типы и операции"
+        override val title = "Переменные и Null Safety"
+        override val description = "Глубокое погружение в типы, иммутабельность и безопасность работы с null."
         override val isAutoExecute = true
 
         override val parameters = listOf(
-            Parameter("userName", "Имя (String)", ParameterType.STRING, "Tom"),
-            Parameter("userAge", "Возраст (Int)", ParameterType.INT, "25", 0f, 120f),
-            Parameter("valA", "Число A", ParameterType.INT, "10", 0f, 100f),
-            Parameter("valB", "Число B", ParameterType.INT, "5", 0f, 100f)
+            Parameter("userName", "Имя (может быть пустым)", ParameterType.STRING, "Tom"),
+            Parameter("userAge", "Возраст", ParameterType.INT, "25", 0f, 150f),
+            Parameter("allowNull", "Разрешить null?", ParameterType.BOOLEAN, "false")
         )
 
         override val sections = listOf(
-            LessonSection(SectionType.HEADER, "Переменные: val и var"),
-            LessonSection(SectionType.TEXT, "Для хранения данных в Kotlin применяются переменные. val — это константа (только для чтения), var — изменяемая переменная."),
+            LessonSection(SectionType.HEADER, "val vs var и Type Inference"),
+            LessonSection(SectionType.TEXT, """
+                В Kotlin два ключевых слова для объявления:
+                • **val** — immutable (только для чтения, аналог final).
+                • **var** — mutable (можно менять).
+                
+                **Type Inference:** Котлин сам понимает тип, если значение присвоено сразу.
+            """.trimIndent()),
             LessonSection(SectionType.CODE, """
-                val name: String = {{userName}}
-                var age: Int = {{userAge}}
-                println("Имя: ${'$'}name, Возраст: ${'$'}age")
-            """.trimIndent(), tag = "vars"),
+                val name = "{{userName}}" // String
+                var age = {{userAge}}    // Int
+                
+                // age = "30" // Ошибка компиляции: несоответствие типов
+                age += 1    // var менять можно
+            """.trimIndent(), tag = "vars_logic"),
 
-            LessonSection(SectionType.HEADER, "Типы данных и операции"),
-            LessonSection(SectionType.TEXT, "Kotlin имеет набор встроенных типов: Int, Double, Boolean, String и др. Арифметические операции: +, -, *, /, %."),
+            LessonSection(SectionType.HEADER, "Null Safety: Революция в Kotlin"),
+            LessonSection(SectionType.TEXT, """
+                Котлин разделяет типы на **Nullable** (могут быть null) и **Non-Nullable** (не могут).
+                Это исключает NullPointerException в рантайме.
+                
+                Операторы:
+                • `?.` — безопасный вызов (Safe Call).
+                • `?:` — оператор Элвиса (Elvis Operator).
+                • `!!` — утверждение не-null (Not-null assertion, опасно!).
+                • `as?` — безопасное приведение типов.
+            """.trimIndent()),
             LessonSection(SectionType.CODE, """
-                val a = {{valA}}
-                val b = {{valB}}
-                println("${'$'}a + ${'$'}b = ${'$'}{a + b}")
-                println("${'$'}a / ${'$'}b = ${'$'}{a.toDouble() / b}")
-            """.trimIndent(), tag = "math")
+                val input: String? = if ({{allowNull}}) null else "{{userName}}"
+                
+                // 1. Safe call
+                val length = input?.length 
+                println("Длина через ?.: ${'$'}length")
+                
+                // 2. Elvis operator
+                val displayName = input ?: "Анонимный пользователь"
+                println("Имя: ${'$'}displayName")
+                
+                // 3. Smart Cast
+                if (input != null) {
+                    // Здесь input автоматически стал String (не String?)
+                    println("В верхнем регистре: ${'$'}{input.uppercase()}")
+                }
+            """.trimIndent(), tag = "null_safety_logic")
         )
 
         override suspend fun execute(
@@ -50,111 +80,94 @@ fun registerBasics() {
             onUpdate: (String) -> Unit
         ) = LessonRegistry.runSafe(onUpdate) { println, _ ->
             when (tag) {
-                "vars" -> {
+                "vars_logic" -> {
                     val name = params.getString("userName")
-                    val age = params.getInt("userAge")
-                    println("Результат: Имя: $name, Возраст: $age")
+                    var age = params.getInt("userAge")
+                    println("--- Log: Работа с переменными ---")
+                    println("val name: String = \"$name\"")
+                    println("var age: Int = $age")
+                    age += 1
+                    println("После age += 1, возраст: $age")
                 }
-                "math" -> {
-                    val a = params.getInt("valA")
-                    val b = params.getInt("valB")
-                    println("$a + $b = ${a + b}")
-                    if (b != 0) println("$a / $b = ${a.toDouble() / b}")
-                    else println("Ошибка: деление на ноль")
+                "null_safety_logic" -> {
+                    val allowNull = params.getBool("allowNull")
+                    val rawName = params.getString("userName")
+                    
+                    // РЕАЛЬНАЯ ЛОГИКА NULL SAFETY
+                    val input: String? = if (allowNull) null else rawName
+                    
+                    println("--- Log: Реальное выполнение Null Safety ---")
+                    println("Входные данные: ${if (input == null) "null" else "\"$input\""}")
+                    
+                    // Safe call
+                    val length = input?.length
+                    println("Результат input?.length: ${length ?: "null"}")
+                    
+                    // Elvis
+                    val displayName = input ?: "Анонимный пользователь"
+                    println("Результат input ?: \"Анонимный пользователь\": $displayName")
+                    
+                    // Smart Cast
+                    if (input != null) {
+                        println("Smart Cast сработал! input.uppercase(): ${input.uppercase()}")
+                    } else {
+                        println("Smart Cast не сработал, так как input == null")
+                    }
                 }
             }
         }
     })
 
-    // --- ГЛАВА 2: УСЛОВНЫЕ КОНСТРУКЦИИ ---
+    // --- 1.2 УПРАВЛЕНИЕ ПОТОКОМ КАК ВЫРАЖЕНИЯ ---
     LessonRegistry.register(object : LessonBackend {
-        override var lessonId = "2.2"
+        override var lessonId = "1.2"
         override val courseId = course
-        override val title = "2. Управляющие конструкции"
-        override val description = "Условные выражения, конструкции if...else и when"
+        override val title = "Управляющие конструкции"
+        override val description = "if, when и try-catch как выражения. Диапазоны (Ranges)."
         override val isAutoExecute = true
 
         override val parameters = listOf(
-            Parameter("score", "Баллы (0-100)", ParameterType.INT, "75", 0f, 100f),
-            Parameter("day", "День недели (1-7)", ParameterType.INT, "1", 1f, 10f)
+            Parameter("score", "Баллы (0-100)", ParameterType.INT, "85", 0f, 100f),
+            Parameter("dayNumber", "День недели (1-10)", ParameterType.INT, "1", 1f, 10f)
         )
 
         override val sections = listOf(
-            LessonSection(SectionType.HEADER, "Конструкция if...else"),
-            LessonSection(SectionType.TEXT, "if проверяет условие и направляет выполнение программы."),
+            LessonSection(SectionType.HEADER, "if и when — это выражения"),
+            LessonSection(SectionType.TEXT, """
+                В Kotlin `if` и `when` возвращают значение. Это позволяет писать более лаконичный код.
+                `when` — мощная замена `switch`, которая может проверять диапазоны и типы.
+            """.trimIndent()),
             LessonSection(SectionType.CODE, """
                 val score = {{score}}
-                val result = if (score >= 50) "Сдал" else "Не сдал"
-                println("Результат теста: ${'$'}result")
-            """.trimIndent(), tag = "if_else"),
+                
+                // if как выражение
+                val result = if (score >= 50) "Pass" else "Fail"
+                
+                // when как выражение
+                val grade = when(score) {
+                    in 90..100 -> "A"
+                    in 70..89  -> "B"
+                    in 50..69  -> "C"
+                    else       -> "F"
+                }
+                println("Score: ${'$'}score, Result: ${'$'}result, Grade: ${'$'}grade")
+            """.trimIndent(), tag = "control_flow_logic"),
 
-            LessonSection(SectionType.HEADER, "Конструкция when"),
-            LessonSection(SectionType.TEXT, "when — это мощная замена switch."),
+            LessonSection(SectionType.HEADER, "Циклы и Диапазоны (Ranges)"),
+            LessonSection(SectionType.TEXT, """
+                Kotlin предоставляет удобные способы итерации:
+                • `1..5` — диапазон [1, 5].
+                • `1 until 5` — диапазон [1, 5) (без 5).
+                • `step` — шаг итерации.
+                • `downTo` — обратный отсчет.
+            """.trimIndent()),
             LessonSection(SectionType.CODE, """
-                val day = {{day}}
-                val message = when(day) {
-                    in 1..5 -> "Будний день"
-                    6, 7 -> "Выходной"
-                    else -> "Неверный день"
-                }
-                println(message)
-            """.trimIndent(), tag = "when_logic")
-        )
-
-        override suspend fun execute(
-            params: Map<String, Any>,
-            sectionIndex: Int,
-            tag: String?,
-            onUpdate: (String) -> Unit
-        ) = LessonRegistry.runSafe(onUpdate) { println, _ ->
-            when (tag) {
-                "if_else" -> {
-                    val score = params.getInt("score")
-                    println("Результат теста: ${if (score >= 50) "Сдал" else "Не сдал"}")
-                }
-                "when_logic" -> {
-                    val day = params.getInt("day")
-                    val msg = when(day) {
-                        in 1..5 -> "Будний день"
-                        6, 7 -> "Выходной"
-                        else -> "Неверный день"
-                    }
-                    println("День $day: $msg")
-                }
-            }
-        }
-    })
-
-    // --- ГЛАВА 2: ЦИКЛЫ, ДИАПАЗОНЫ И МАССИВЫ ---
-    LessonRegistry.register(object : LessonBackend {
-        override var lessonId = "2.3"
-        override val courseId = course
-        override val title = "3. Циклы, диапазоны и массивы"
-        override val description = "Перебор данных с помощью for, while и работа с массивами"
-        override val isAutoExecute = true
-
-        override val parameters = listOf(
-            Parameter("count", "Количество повторов", ParameterType.INT, "5", 1f, 20f),
-            Parameter("step", "Шаг цикла", ParameterType.INT, "1", 1f, 5f),
-            Parameter("names", "Массив имен", ParameterType.ARRAY_STRING, "Tom, Alice, Bob")
-        )
-
-        override val sections = listOf(
-            LessonSection(SectionType.HEADER, "Циклы и диапазоны"),
-            LessonSection(SectionType.CODE, """
-                val n = {{count}}
-                val s = {{step}}
-                for (i in 1..n step s) {
-                    print("${'$'}i ")
-                }
-            """.trimIndent(), tag = "loops"),
-
-            LessonSection(SectionType.HEADER, "Массивы (Array)"),
-            LessonSection(SectionType.CODE, """
-                val people = arrayOf({{names}})
-                println("Первый человек: ${'$'}{people[0]}")
-                println("Всего имен: ${'$'}{people.size}")
-            """.trimIndent(), tag = "arrays")
+                println("Простой диапазон (1..5):")
+                for (i in 1..5) print("${'$'}i ")
+                
+                println("\nС шагом 2:")
+                for (i in 1..10 step 2) print("${'$'}i ")
+            """.trimIndent(), tag = "ranges_logic")
         )
 
         override suspend fun execute(
@@ -164,22 +177,31 @@ fun registerBasics() {
             onUpdate: (String) -> Unit
         ) = LessonRegistry.runSafe(onUpdate) { println, print ->
             when (tag) {
-                "loops" -> {
-                    val n = params.getInt("count")
-                    val s = params.getInt("step").coerceAtLeast(1)
-                    for (i in 1..n step s) {
-                        print("$i ")
+                "control_flow_logic" -> {
+                    val score = params.getInt("score")
+                    
+                    val result = if (score >= 50) "Pass" else "Fail"
+                    val grade = when(score) {
+                        in 90..100 -> "A"
+                        in 70..89  -> "B"
+                        in 50..69  -> "C"
+                        else       -> "F"
                     }
+                    println("--- Выполнение логики ---")
+                    println("Результат проверки score=$score:")
+                    println("result = $result")
+                    println("grade = $grade")
                 }
-                "arrays" -> {
-                    val names = params["names"] as? List<*> ?: emptyList<String>()
-                    if (names.isNotEmpty()) {
-                        println("Первый человек: ${names[0]}")
-                        println("Всего имен: ${names.size}")
-                        println("Список: ${names.joinToString(", ")}")
-                    } else {
-                        println("Массив пуст")
-                    }
+                "ranges_logic" -> {
+                    println("--- Итерация по диапазонам ---")
+                    print("1..5: ")
+                    for (i in 1..5) print("$i ")
+                    println()
+                    print("1 until 5: ")
+                    for (i in 1 until 5) print("$i ")
+                    println()
+                    print("10 downTo 1 step 3: ")
+                    for (i in 10 downTo 1 step 3) print("$i ")
                 }
             }
         }

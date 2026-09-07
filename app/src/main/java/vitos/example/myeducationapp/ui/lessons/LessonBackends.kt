@@ -3,6 +3,7 @@ package vitos.example.myeducationapp.ui.lessons
 import vitos.example.myeducationapp.logic.kotlin.basics.registerBasics
 import vitos.example.myeducationapp.logic.kotlin.functions.registerFunctions
 import vitos.example.myeducationapp.logic.kotlin.oop.registerOOP
+import vitos.example.myeducationapp.logic.kotlin.oop.registerAdvancedClasses
 import vitos.example.myeducationapp.logic.kotlin.generics.registerGenerics
 import vitos.example.myeducationapp.logic.kotlin.collections.registerCollections
 import vitos.example.myeducationapp.logic.kotlin.coroutines.Coroutines

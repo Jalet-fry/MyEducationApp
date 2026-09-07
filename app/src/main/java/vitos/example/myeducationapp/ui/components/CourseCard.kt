@@ -18,8 +18,17 @@ import androidx.compose.ui.unit.dp
 import vitos.example.myeducationapp.data.Course
 import vitos.example.myeducationapp.ui.theme.MyEducationAppTheme
 
+fun String.toColor(): Color {
+    return try {
+        Color(android.graphics.Color.parseColor(this))
+    } catch (e: Exception) {
+        Color.Gray
+    }
+}
+
 @Composable
 fun CourseCard(course: Course, onClick: (Course) -> Unit) {
+    val accentColor = course.accentColorHex.toColor()
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -28,13 +37,13 @@ fun CourseCard(course: Course, onClick: (Course) -> Unit) {
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
         ),
-        border = BorderStroke(1.dp, course.accentColor.copy(alpha = 0.5f))
+        border = BorderStroke(1.dp, accentColor.copy(alpha = 0.5f))
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(
                 text = course.title,
                 style = MaterialTheme.typography.headlineMedium,
-                color = course.accentColor
+                color = accentColor
             )
             Text(
                 text = course.description,
@@ -50,7 +59,7 @@ fun CourseCard(course: Course, onClick: (Course) -> Unit) {
 fun CourseCardPreview() {
     MyEducationAppTheme {
         CourseCard(
-            course = Course("kotlin", "Kotlin", "Современный язык программирования", Color(0xFF7F52FF)),
+            course = Course("kotlin", "Kotlin", "Современный язык программирования", "#7F52FF"),
             onClick = {}
         )
     }
